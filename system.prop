@@ -356,3 +356,5 @@ dalvik.vm.stack-trace-file=/data/anr/traces.txt
 qcom.bluetooth.soc=smd
 ro.qualcomm.bt.hci_transport=smd
 
+# UART
+sys.uart.enable=0

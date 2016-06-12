@@ -204,7 +204,7 @@ on boot
 
     # Set the console loglevel to < KERN_INFO
     # Set the default message loglevel to KERN_INFO
-    write /proc/sys/kernel/printk "6 6 1 7"
+    write /proc/sys/kernel/printk "8 6 1 7"
 
     # Allow access for CCID command/response timeout configuration
     chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
@@ -1270,6 +1270,11 @@ on property:sys.foregroundapp=*
 
 on property:sys.foregroundapp=com.asus.launcher
     write /sys/module/lowmemorykiller/parameters/minfree_lowram "38432,43040,50648,65256,102400,128000"
+
+on property:sys.boot_completed=1
+    # Disable/Enable UART
+    write /proc/driver/audio_debug ${sys.uart.enable}
+
 
 on property:sys.foregroundapp=com.android.systemui
     write /sys/module/lowmemorykiller/parameters/minfree_lowram "38432,43040,50648,65256,102400,128000"
