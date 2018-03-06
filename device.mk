@@ -416,6 +416,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.target.rc \
     init.asus.usb.rc \
+    init.chargerled.sh \
     sp
 
 
