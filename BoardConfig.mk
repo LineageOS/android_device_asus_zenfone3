@@ -21,6 +21,7 @@ BOARD_VENDOR := asus-qcom
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Asserts
+TARGET_BOARD_INFO_FILE ?= $(DEVICE_PATH)/board-info.txt
 TARGET_OTA_ASSERT_DEVICE := Z017,ASUS_Z017D_1,Z012,ASUS_Z012D,ASUS_Z012DC,ASUS_Z012S
 
 # Use Snapdragon LLVM, if available
@@ -195,11 +196,13 @@ TARGET_RIL_VARIANT := caf
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
-    
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # Recovery
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_zenfone3
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/recovery/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
