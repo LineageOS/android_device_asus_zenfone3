@@ -53,6 +53,3 @@
 
 # usb
 /system/vendor/bin/init.asus.usb.sh            u:object_r:usb_exec:s0
-
-# Asus
-/system/bin/ssn                                 u:object_r:asus_ssn_exec:s0
