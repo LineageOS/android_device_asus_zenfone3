@@ -45,6 +45,7 @@ char const *description;
 char const *fingerprint;
 char const *device;
 char const *model;
+char const *power_profile;
 char const *carrier;
 char const *hwID;
 char const *csc;
@@ -153,6 +154,7 @@ void check_varient()
         hwID = "ZE552KL_MP";
         csc = "WW_ZE552KL-15.0410.1806.65-0";
         dpi = "400";
+        property_set("ro.power_profile.override", "power_profile_Z012");
     }
 
     /* Shared props */
