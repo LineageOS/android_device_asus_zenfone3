@@ -1,5 +1,5 @@
-# Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2018 The LineageOS Project
+#
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,14 +13,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/asus/zenfone3/full_zenfone3.mk)
-
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := zenfone3
-PRODUCT_NAME := lineage_zenfone3
-PRODUCT_BRAND := asus
-PRODUCT_MANUFACTURER := asus
-
-PRODUCT_GMS_CLIENTID_BASE := android-asus
-
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.name
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/lineage_zenfone3.mk

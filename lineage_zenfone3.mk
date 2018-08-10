@@ -18,8 +18,14 @@
 # Inherit from zenfone3 device
 $(call inherit-product, device/asus/zenfone3/device.mk)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := zenfone3
-PRODUCT_NAME := full_zenfone3
-
+# Inherit from zenfone3 vendor
 $(call inherit-product-if-exists, vendor/asus/zenfone3/zenfone3-vendor.mk)
+
+PRODUCT_NAME := lineage_zenfone3
+PRODUCT_DEVICE := zenfone3
+PRODUCT_BRAND := asus
+PRODUCT_MANUFACTURER := asus
+
+PRODUCT_GMS_CLIENTID_BASE := android-asus
+
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.name
