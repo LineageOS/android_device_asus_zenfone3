@@ -31,14 +31,16 @@
 #include <sys/_system_properties.h>
 #include <sys/stat.h>
 
+#include <android-base/file.h>
 #include <android-base/properties.h>
 #include "vendor_init.h"
 #include "property_service.h"
 
-using android::init::property_set;
-
 #include <fcntl.h>
 #include <unistd.h>
+
+#define SIMCODE_FILE "/factory/SIMCODE"
+#define SSN_FILE "/factory/SSN"
 
 char const *product;
 char const *description;
@@ -50,6 +52,11 @@ char const *carrier;
 char const *hwID;
 char const *csc;
 char const *dpi;
+
+using android::base::GetProperty;
+using android::base::ReadFileToString;
+
+using android::init::property_set;
 
 void property_override(char const prop[], char const value[])
 {
@@ -70,50 +77,27 @@ void property_override_dual(char const system_prop[], char const vendor_prop[], 
 
 static void set_serial()
 {
-    int fd, rc;
-    char buf[16];
-    int status = 1;
-    const char *path = "/factory/SSN";
+    std::string ssnValue;
 
-    fd = open(path, O_RDONLY);
-    if (fd < 0) {
-        status = -1;
-    }
-
-    if (rc = read(fd, buf, 15) < 0) {
-        status = -1;
+    if (ReadFileToString(SSN_FILE, &ssnValue)) {
+        property_override("ro.serialno", ssnValue.c_str());
     } else {
-        buf[15] = '\0';
-        property_override("ro.serialno", buf);
-    }
-    close(fd);
-
-    if (status < 0) {
         property_override("ro.serialno", "UNKNOWNSERIALNO");
     }
 }
 
 static void set_simcode()
 {
-    int fd, rc;
-    char buf[3];
-    const char *slots;
-    const char *path = "/factory/SIMCODE";
+    bool isDualsim;
+    std::string simcodeValue;
 
-    fd = open(path, O_RDONLY);
-    if (fd < 0) {
-        slots = "S2";
-    }
-
-    if (rc = read(fd, buf, 2) < 0) {
-        slots = "S2";
+    if (ReadFileToString(SIMCODE_FILE, &simcodeValue)) {
+        isDualsim = (simcodeValue == "S1") ? 0 : 1;
     } else {
-        buf[2] = '\0';
-        slots = buf;
+        isDualsim = 1;
     }
-    close(fd);
 
-    if (strcmp(slots, "S1") == 0) {
+    if (!isDualsim) {
         property_set("persist.radio.multisim.config", "none");
     } else {
         property_set("persist.radio.multisim.config", "dsds");
@@ -122,8 +106,8 @@ static void set_simcode()
 
 void check_varient()
 {
-    std::string project = android::base::GetProperty("ro.boot.id.prj", "");
-    int rf = stoi(android::base::GetProperty("ro.boot.id.rf", ""));
+    std::string project = GetProperty("ro.boot.id.prj", "");
+    int rf = stoi(GetProperty("ro.boot.id.rf", ""));
     if (project == "6") {
         switch(rf){
             case 0: model = "ASUS_Z017D"; break; /* Global Varient */
@@ -160,7 +144,6 @@ void check_varient()
         dpi = "400";
         property_set("ro.power_profile.override", "power_profile_Z012");
     }
-
 }
 
 void vendor_load_properties()
