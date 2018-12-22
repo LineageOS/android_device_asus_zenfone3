@@ -46,16 +46,6 @@ vendor/lib/libfastcvopt.so|be6d462207dcc238a734d324c479d1022a324c16
 vendor/lib64/libadsp_default_listener.so|f7ea94537c66dfa11e1235064d43c8f56c3b3c51
 vendor/lib64/libadsprpc.so|fe4a7c28a2284ab95c068ad3ffaf256705cf9a02
 
-# ANT+ (system) - from enchilada - PKQ1.180716.001
-lib64/com.qualcomm.qti.ant@1.0.so|199481b290856fb63f5c5bf6def426b43309becb
--lib64/libantradio.so|fb958cb68c99c71455f969afdf96225f5110f0df
-lib/com.qualcomm.qti.ant@1.0.so|fcd6a7130c480bfe4e4d9cc00702ed8444cddc82
--lib/libantradio.so|7506f2577f2f1068688b623ca85e432be9c3dac9
-
-# ANT+ (vendor)
-vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
-vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so
-
 # Audio
 bin/tinyplay
 vendor/lib/libacdbloader.so
