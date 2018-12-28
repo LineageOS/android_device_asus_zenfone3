@@ -316,6 +316,7 @@ PRODUCT_COPY_FILES += \
 
 # OMX
 PRODUCT_PACKAGES += \
+    libaacwrapper \
     libc2dcolorconvert \
     libOmxAacEnc \
     libOmxAmrEnc \
