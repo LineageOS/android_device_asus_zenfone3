@@ -336,8 +336,7 @@ service qcom-c_main-sh /vendor/bin/init.class_main.sh
 
 on property:vold.decrypt=trigger_restart_framework
     start qcom-c_main-sh
-    stop vendor.camera-provider-2-4
-    start vendor.camera-provider-2-4
+    restart vendor.camera-provider-2-4
     start cnss_diag
 
 on property:persist.env.fastdorm.enabled=true
@@ -481,8 +480,7 @@ on charger
     start charger_led
 
 on property:init.svc.surfaceflinger=restarting
-    stop  vendor.hwcomposer-2-1
-    start vendor.hwcomposer-2-1
+    restart vendor.hwcomposer-2-1
 
 on property:vendor.display.lcd_density=*
     setprop ro.sf.lcd_density ${vendor.display.lcd_density}
