@@ -16,10 +16,8 @@ vendor/lib/libsphere3.so
 vendor/lib/style.cng
 
 # Camera
-lib/libjnigraphics.so
 lib/libtrueportrait.so
 lib/libtruescanner.so
-lib64/libjnigraphics.so
 vendor/bin/mm-qcamera-daemon
 vendor/lib/hw/camera.msm8953.so
 vendor/lib/libasuscameraext_jni.so
