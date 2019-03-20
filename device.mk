@@ -236,9 +236,6 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1 \
     android.hardware.biometrics.fingerprint@2.1-service
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fpservice.sh:$(TARGET_COPY_OUT_VENDOR)/etc/fpservice.sh
-
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
@@ -366,7 +363,7 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.asus.usb.rc \
     init.chargerled.sh \
-    init.modem.sh \
+    fpservice.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.sh
