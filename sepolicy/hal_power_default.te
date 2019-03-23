@@ -1,2 +1,1 @@
-allow hal_power_default sysfs_gesture_device:file { write open };
-allow hal_power_default sysfs_gesture_device:dir search;
+allow hal_power_default sysfs_touchpanel:file { write open };
