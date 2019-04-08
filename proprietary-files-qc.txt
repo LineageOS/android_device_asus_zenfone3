@@ -616,6 +616,7 @@ lib/libwfduibcsrcinterface.so|3ce31a3bde36bd5c7dac31ccc1fda8043f482f86
 vendor/bin/wifidisplayhalservice|959c9f4c35f3967d6ebf9d3c5cb5728ce5e4752f
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc|f3add191d48d9285eb1b69433c36bb3edbaf86fe
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so|d4426bb8bb6016c932f9cbcafcb1ff8b7121cb10
+vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so|93487a83a35f0fa3fe37445edd3ff22fcc52e4fc
 vendor/lib/libmmosal_proprietary.so|51d9cbf713f06e07d3f8aa65640f7251e9b3a808
 vendor/lib/libwfdcommonutils_proprietary.so|d190dd29efbb601933a32dbc0f1f1df00384f077
 vendor/lib/libwfdhaldsmanager.so|0d4207c8c43640ea3c3ab6ecdb82afa528c2fd25
