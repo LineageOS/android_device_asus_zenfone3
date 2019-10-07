@@ -153,7 +153,6 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Init
 TARGET_IGNORE_RO_BOOT_SERIALNO := true
