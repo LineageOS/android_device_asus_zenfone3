@@ -497,10 +497,6 @@ PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
     libandroid_net
 
-# Doze
-PRODUCT_PACKAGES += \
-   ZenfoneDoze
-
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-service \
