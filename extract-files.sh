@@ -50,6 +50,13 @@ else
   fi
 fi
 
+function blob_fixup() {
+    case "${1}" in
+    lib64/wfdnative.so)
+        patchelf --remove-needed "android.hidl.base@1.0.so" "${2}"
+        ;;
+}
+
 # Initialize the helper
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT"
 
