@@ -1,5 +1,5 @@
 type tfa98xx, coredomain, domain;
-type tfa98xx_exec, exec_type, file_type;
+type tfa98xx_exec, system_file_type, exec_type, file_type;
 type tfa98xx_vendor_file, vendor_file_type, file_type;
 type tfa98xx_data_file, core_data_file_type, data_file_type, file_type;
 
