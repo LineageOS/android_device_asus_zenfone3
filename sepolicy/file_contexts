@@ -24,6 +24,12 @@
 # Leds
 /(vendor|system/vendor)/bin/init.chargerled\.sh                       u:object_r:init_led_exec:s0
 
+# Partitions
+/asdf                                                                 u:object_r:factory_file:s0
+/asusfw                                                               u:object_r:factory_file:s0
+/factory                                                              u:object_r:factory_file:s0
+/firmware                                                             u:object_r:firmware_file:s0
+
 # Sensors
 /dev/asusRgbSensor                                                    u:object_r:sensors_device:s0
 /dev/LaserSensor                                                      u:object_r:sensors_device:s0
