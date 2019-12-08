@@ -189,11 +189,7 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
 BOARD_ROOT_EXTRA_FOLDERS += \
     asusfw \
     asdf \
-    ADF \
-    APD \
-    factory \
-    persdata \
-    persdata/absolute
+    factory
 
 # Qualcomm support
 BOARD_USES_QC_TIME_SERVICES := true

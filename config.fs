@@ -202,31 +202,7 @@ user: AID_MEDIA
 group: AID_MEDIA
 caps: 0
 
-[persdata/]
-mode: 0750
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: 0
-
-[persdata/absolute/]
-mode: 0750
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: 0
-
 [asusfw/]
-mode: 0775
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: 0
-
-[ADF/]
-mode: 0775
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: 0
-
-[APD/]
 mode: 0775
 user: AID_SYSTEM
 group: AID_SYSTEM
