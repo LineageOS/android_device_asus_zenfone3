@@ -1,6 +1,3 @@
-on init
-    export PATH /sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin:/bin
-
 on fs
     mkdir /dev/validity 0760 system root
     chown system root /dev/vfsspi
